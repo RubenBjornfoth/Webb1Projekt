@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="icon" href="images/favicon.png">
+  </head>
+<body>
+
+    <div class="parallax" id="start"> <!-- hero / sida 1 -->
+            
+               
+        <p class="welcome">Välkommen till </p>
+        <div class="header1"> <img class="header1" src="images/header1.png" alt="Rivstart" ></div>
+        <div class="scrolldown"> <img src="images/scrolldown.png" alt="Scroll down"></div>
+        <div class="space1"> </div>
+
+    </div> <!-- hero slut -->
+
+   <!-- navbar -->
+   <div id="navbarwrap">
+<div id="navbar">
+        <a href="main.html">Hem</a>
+        <a href="main.html#games">Våra spel</a>
+        <a href="about.html">Om oss</a>
+      </div>
+<div id="navbarspace"> </div>
+    </div>
+<!-- navbar slut -->
+
+<!-- sida 2 -->
+    <div class="parallax" id="parallax2"> 
+
+<!-- slideshow grej-->
+<div id="helaslideshowgrejen">
+<div class="slideshow-container">
+
+  <div class="mySlides">
+    <p>Rivstart är ett svenskt företag etablerat år 1844 som tillverkar sällskapsspel</p>
+  </div>
+
+  <div class="mySlides">
+    <p>Vi är ansvariga för klassiska brädspel såsom <i> Korv på Bräda, Kast med liten bira</i> och <i>Fläskläpp!</i></p>
+  </div>
+
+<div class="mySlides">
+    <p><i>Jag skulle rekommendera Rivstart till alla som ska hålla i fest eller kalas</i></p>
+        <p id="citat">- Edward Blom</p>
+  </div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+</div><!-- slideshow grej slut -->
+
+</div> <!-- sida 2 slut -->
+
+<!-- spel / sida 3 -->
+  <h2 id="games">Våra spel</h2>
+    <div class="parallax" id="parallax3">
+    <div class="griddiv">          
+     <div id="korvgrid"> <a class="o-understruket" href="korv.html"> 
+<div class="korvcard">
+    <p class="cardtext">Korv på bräda </p>
+    <p> </p>
+</div></a></div>
+
+
+              <div id="kastgrid"> <a class="o-understruket" href="kast.html">
+<div class="kastcard">
+    <p class="cardtext">Kast med <br> liten bira</p>
+  </div></a></div>
+    
+
+  <div id="flgrid"> <a class="o-understruket" href="fl.html">
+    <div class="flcard">
+        <p class="cardtext">Fläskläpp!</p>
+      </div></a></div>
+    
+    
+<!-- spel / sida 3 slut -->
+
+    <!-- bottom bar -->
+    <div id="bottombar">
+     <p class="bottombartext"> ©Rivstart 2019</p>
+     <ul id="ul1">
+      <li class="li1"><a class="bottombartext" href="#eller.nej.förresten">Kontakta oss</a></li>
+      <li class="li1"><a class="bottombartext" href="about.html">Om oss</a></li>
+      <li class="li1"><a class="bottombartext" href="https://weather.com">Nu har jag fått nog av den här skitsidan</a></li>
+    </ul>
+    <div class="space2"> <a class="o-understruket" href="main.html">
+       <div id="scrollTOP"> <p id="scrolltext">JAG VILL UPP IGEN</p></div>
+     </a>
+    </div>
+    </div><!-- bottom bar slut -->
+  </div> <!-- griddiv slut -->
+    </div> <!-- parallax3 slut -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+/* navbar */    
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+
+var sticky = navbar.offsetTop;
+
+/* Skriptet får problem när man ändrar höjd på webbläsarens fönster. 
+Jag vet inte hur man åtgärdar detta så ha lite översikt och ändra inte höjden så mycket :) det blir bra igen när man laddar om sidan*/
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+
+/* scroll */
+$(window).scroll(function() {
+
+if ($(this).scrollTop()>0)
+ {
+    $('.scrolldown').fadeOut();
+ }
+else
+ {
+  $('.scrolldown').fadeIn();
+ }
+});
+
+/* slideshow grej */
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,427 @@
+/* generella grejer */
+* {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+h2 {
+    background-color: #52B4F2;
+    font-size: 2em;
+    text-align: center;
+    padding: 20px;
+
+}
+h3 {
+    font-size: 1.6em;
+  }
+
+p {
+    font-size: 1.4em;
+
+}
+.finstilt {
+    font-size: 0.5em;
+  }
+
+.o-understruket {
+    text-decoration: none;
+}
+
+/* .parallaxvideo1 { 
+    height: 100%;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    }
+    .parallaxvideo1 video {  
+    min-width: 100%;
+    position: fixed;
+    top:0;
+    z-index: -999;
+    margin: 1px;
+    }
+
+    ifall någon parallax ska vara en video
+    */
+
+body, html {
+    height: 100%;
+}
+
+.parallax {
+    height: 100%;   
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* generella grejer slut */
+/* startskärm / sida 1 */
+.header1 { 
+    grid-area: header;
+}
+
+.welcome {
+    grid-area: welcome;
+    padding: 45px 0 0 0;
+    color:#F2A452;
+    margin: 20% auto auto auto;
+}
+.space1 {
+    grid-area: space1;
+    height: 305px;
+    width: 0;
+}
+
+.scrolldown {
+    grid-area: scrolldown;
+    justify-self: center;
+    margin: 0 0 0 0;
+    opacity: 0;
+    transition: 100ms;
+}
+
+body:hover .scrolldown {
+    opacity: 1;
+    transition: 1000ms;
+    transition-delay: 3s;
+
+}
+
+#start {
+    background-image: url("../images/parallax1.jpg");
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 200px 3fr 1fr;
+    grid-template-columns: 1fr 583px 1fr ;
+    grid-template-areas: 
+    ". welcome ."
+    ". header ."
+    " space1 scrolldown .";
+    height: 1000px;
+}
+/* startskärm / sida 1 slut */
+/* navbar */
+#navbar {
+    overflow: hidden;
+    background-color: #52B4F2;
+    height: 98px;
+    z-index: 999;
+}
+
+#navbar a {
+    float: left;
+    display: block;
+    color: #353535;
+    text-align: center;
+    padding: 1.79em 4.4em;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+#navbar a:hover {
+    background-color: #F2F2F2;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+#navbarwrap {
+    height: 98px;
+    width: 100%;
+}
+
+#navbarspace {
+    height: 98px;
+    width: 0;
+}
+  /* navbar slut */
+
+/* sida 2 */
+#parallax2 {
+    background-image: url("../images/board.jpg");
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 800px minmax(0,1fr);
+    grid-template-rows: 248px 255px 222px;
+    grid-template-areas: 
+    " . . . "
+    " . slideshow . "
+    " . . . ";
+    height: 900px;
+}
+
+/* slideshow grej */
+#helaslideshowgrejen {
+    grid-area: slideshow;
+    align-items: center;
+}
+
+.slideshow-container {
+    position: relative;
+    background: #F2F2F2;
+    width: 800px;
+    height: 200px;
+  }
+  
+  #citat {
+    font-size: 0.9em;
+  }
+
+  .mySlides {
+    display: none;
+    padding: 80px;
+    text-align: center;
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: #6B6B6B;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  .next {
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: #6B6B6B;
+    color: #F2F2F2;
+  }
+  
+  .dot-container {
+    text-align: center;
+    padding: 20px 0;
+    background: #ddd;
+    width: 800px;
+    height: 15px;
+  }
+
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  /* slideshow slut */
+/* sida 2 slut */
+
+/* spel / sida 3 */
+#parallax3 {
+    background-image: url("../images/background2.png");
+    background-repeat: repeat;
+    background-size: inherit;
+    height: 700px;
+}
+
+.griddiv {
+    display: grid;
+    grid-template-columns: minmax(40px, 1fr) 400px minmax(40px, 1fr) 400px minmax(40px, 1fr) 400px minmax(40px, 1fr);
+    grid-template-rows: 100px 500px 100px 300px;
+    grid-template-areas: 
+    " . . . . . . . "
+    " . korv . kast . flasklapp . "
+    " . . . . . . . "
+    " bottombar bottombar bottombar bottombar bottombar bottombar bottombar ";
+}
+
+.cardtext {
+    grid-area: header;
+    font-size: 3em;
+    text-align: center;
+    color:#F2A452;
+}
+
+.korvcard, .kastcard, .flcard {
+    height: 500px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 3px 3px rgba(39, 39, 39, 0.247);
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-areas: 
+    " . header . ";
+    filter: grayscale(100%);
+    transition: 250ms;
+}
+#korvgrid {
+    grid-area: korv;
+}
+.korvcard {
+    background-image: url("../images/korvbrada.jpg");
+    background-position: center;
+}
+#kastgrid {
+    grid-area: kast;
+}
+.kastcard {
+    background-image: url("../images/kast.jpg");
+    background-position: left;
+}
+#flgrid {
+    grid-area: flasklapp;
+}
+.flcard {
+    background-image: url(../images/fl.jpg);
+    background-position: center;
+}
+.korvcard:hover, .kastcard:hover, .flcard:hover {
+    filter: grayscale(0%);
+    transform: scale(1.01);
+    transition: 250ms;
+}
+
+/* spel / sida 3 slut */
+
+/* bottom bar */
+#bottombar {
+    grid-area: bottombar;
+    background-color: #52B4F2;
+    z-index: 999;
+    height: 300px;
+}
+
+.bottombartext, .li1, #ul1 {
+    padding: 10px 20px 10px 20px;
+    color:#191919;
+}
+
+#ul1 {
+    margin-left: 20px;
+}
+
+#text2 {
+    font-size: 0.8em;
+}
+
+#scrollTOP {
+    background-color: #F2A452;
+    height: 40px;
+    width: 60px;
+    border-radius: 10px;
+}
+
+#scrolltext {
+    text-decoration: none;
+    font-size: 0.8em;
+    color: #191919;
+    text-align: center;
+}
+
+.space2 {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+/* bottom bar slut */
+
+@media screen and (max-width: 1380px) {
+    .griddiv {grid-template-columns: minmax(40px, 1fr) 400px minmax(120px, 1fr) 400px minmax(40px, 1fr);
+    grid-template-rows: 100px 500px 100px 500px 100px 300px;
+    grid-template-areas: 
+    " . . . . . "
+    " . korv . kast . "
+    " . . . . . "
+    " . flasklapp . . . "
+    " . . . . . "
+    " bottombar bottombar bottombar bottombar bottombar ";
+    }
+
+    #parallax3 {
+        height: 1400px;
+    }
+
+    #start {
+        height: 800px;
+    }
+
+
+}
+
+@media screen and (max-width: 1020px) {
+    .griddiv {grid-template-columns: minmax(40px, 1fr) 400px minmax(40px, 1fr);
+        grid-template-rows: 100px 500px 100px 500px 100px 500px 100px 300px;
+        grid-template-areas: 
+        " . . . "
+        " . korv . "
+        " . . . "
+        " . kast . "
+        " . . . "
+        " . flasklapp . "
+        " . . . "
+        " bottombar bottombar bottombar ";
+        }
+    
+        #parallax3 {
+            height: 2100px;
+        }
+}
+
+@media screen and (max-width: 820px) {
+    .slideshow-container {
+        width: 100%;
+    }
+    .dot-container {
+        width: 100%;
+    }
+    #parallax2 {
+        grid-template-columns: 10px 90% 10px;
+
+    }
+}
+
+@media screen and (max-width: 690px) {
+    #navbar a {
+        padding: 1.79em 1.0em;
+    }
+}
+
+@media screen and (max-width: 608px) {
+    .slideshow-container {
+        height: 300px;
+    }
+    #start {
+        grid-template-columns: 1fr 90% 1fr;
+        grid-template-rows: 200px 1fr 200px;
+        grid-template-areas:
+        " . welcome . "
+        " . header . "
+        " . . . ";
+    }
+    .header1 {
+        width: 100%;
+    }
+    .space1, .scrolldown {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .griddiv {
+        grid-template-columns: 10% 80% 10%;
+    }
+    #bottombar {
+        width: 100%;
+    }
+}
+

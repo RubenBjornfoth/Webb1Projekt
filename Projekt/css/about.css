@@ -1,0 +1,65 @@
+/* navbar */
+  #navbar {
+      overflow: hidden;
+      background-color: #52B4F2;
+      position: fixed;
+      width: 100%;
+      top: 0;
+  }
+  #navbar a:hover {
+      background-color: #F2F2F2;
+  }
+    /* navbar slut */
+    /* sida */
+  #parallax3 {
+    height: 1900px;
+  }
+  .griddiv2 {
+      grid-template-columns: minmax(40px, 1fr) 550px minmax(40px, 1fr);
+      grid-template-rows: 100px 1800px 100px;
+      display: grid;
+      grid-template-areas: 
+      " . . ."
+      " . infobox . "
+      " bottombar bottombar bottombar ";
+  }
+  .infobox {
+    width: 500px; 
+    height: 1600px;
+    background-color: #52B4F2;
+    padding: 1em 30px;
+    color: #191919;
+    border-radius: 20px;
+    box-shadow: 3px 3px rgba(39, 39, 39, 0.247);
+    grid-area: infobox;
+  }
+
+@media screen and (max-width: 680px) {
+  .infobox {
+    width: 300px;
+    height: 2700px;
+  }
+
+  .griddiv2 {
+    grid-template-columns: minmax(10px, 1fr) 320px minmax(10px, 1fr);
+    grid-template-rows: 100px 2900px 100px;
+  }
+
+  #parallax3 {
+    height: 3000px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .infobox {
+    width: 230px;
+    height: 3600px;
+  }
+  .griddiv2 {
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 100px 3700px 100px;
+  }
+  #parallax3 {
+    height: 4000px;
+  }
+}

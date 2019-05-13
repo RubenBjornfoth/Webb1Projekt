@@ -1,0 +1,76 @@
+/* navbar */
+  #navbar {
+      overflow: hidden;
+      background-color: #52B4F2;
+      position: fixed;
+      width: 100%;
+      top: 0;
+  }
+  #navbar a:hover {
+      background-color: #F2F2F2;
+  }
+    /* navbar slut */
+    /* sida */
+  #parallax3 {
+    height: 1900px;
+  }
+  
+  .griddiv {
+      grid-template-rows: 100px 500px;
+  
+  }
+  .griddiv2 {
+      grid-template-columns: minmax(40px, 1fr) 550px minmax(40px, 1fr);
+      grid-template-rows: 100px 1200px 100px;
+      display: grid;
+      grid-template-areas: 
+      " . . ."
+      " . infobox . "
+      " bottombar bottombar bottombar ";
+  }
+  
+  .infobox {
+    width: 500px; 
+    height: 1000px;
+    background-color: #52B4F2;
+    padding: 1em 30px;
+    color: #191919;
+    border-radius: 20px;
+    box-shadow: 3px 3px rgba(39, 39, 39, 0.247);
+    grid-area: infobox;
+  }
+
+  @media screen and (max-width: 1380px) {
+    .griddiv {
+      grid-template-rows: 100px 500px 100px 500px;
+    }
+    #parallax3 {
+      height: 2700px;
+    }
+  }
+
+  @media screen and (max-width: 1020px) {
+    .griddiv {
+      grid-template-rows: 100px 500px 100px 500px 100px 500px;
+    }
+    #parallax3 {
+      height: 3400px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .griddiv {
+      grid-template-columns: minmax(10px, 1fr) 250px minmax(10px, 1fr);
+    }
+    .infobox {
+      width: 230px;
+      height: 2000px;
+    }
+    .griddiv2 {
+      grid-template-columns: 10% 80% 10%;
+      grid-template-rows: 100px 2100px 100px;
+    }
+    #parallax3 {
+      height: 4200px;
+    }
+  }
